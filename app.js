@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.get('/api/scores', (req, res) => {
+app.get('/', (req, res) => {
     let sql = "SELECT * FROM scores";
     db.query(sql, (error, result) => {
         if(error) throw error;
@@ -80,15 +80,6 @@ function validateScore(score) {
     });
     return schema.validate(score);
 }
-
-// var checkIfRowExist = (id) => {
-//     let sql = `SELECT * FROM scores WHERE id=${id}`;
-//     let temp = true;
-//     db.query(sql, (err, result) => {
-//         return "result";
-//     });
-// }
-
 
 
 const port = process.env.PORT || 3000;
