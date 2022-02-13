@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.status(201).send("Welcome to the highScore applicaion.")
+    res.status(201).send("Welcome to the highScore Web Service.")
 });
 
 app.get('/api/scores', (req, res) => {
