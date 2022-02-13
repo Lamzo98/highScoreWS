@@ -5,12 +5,13 @@ let con = mysql.createConnection({
     user     : process.env.RDS_USERNAME,
     password : process.env.RDS_PASSWORD,
     port     : process.env.RDS_PORT,
-    database : "highscoredb"
+    database : process.env.RDS_DB_NAME
 });
 
 con.connect((err) => {
     if (err) {
-        throw err;
+        console.error('Database connection failed: ' + err.stack);
+        return;
     } 
     console.log("Connected to MySQL...");
 });
