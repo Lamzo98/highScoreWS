@@ -1,5 +1,7 @@
 const express = require('express');
 const db = require('./DBConnection');
+
+
 const Joi = require('joi');
 
 //Entry point
@@ -16,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/scores', (req, res) => {
     let sql = "SELECT * FROM scores";
-    db.query(sql, (error, result) => {
+    db.query(sql,function (error, result){
         if(error) throw error;
         res.status(201).send(result);
     });
