@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 
-let con = await mysql.createConnection({
+let con = mysql.createConnection({
     host     : process.env.RDS_HOSTNAME,
     user     : process.env.RDS_USERNAME,
     password : process.env.RDS_PASSWORD,
