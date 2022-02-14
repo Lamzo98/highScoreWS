@@ -13,8 +13,7 @@ con.connect((err) => {
         console.error('Database connection failed: ' + err.stack);
         return;
     } 
-    
+    module.exports = con;
     console.log("Connected to MySQL...");
 });
 
-module.exports = con;
